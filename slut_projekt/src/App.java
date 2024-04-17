@@ -7,6 +7,7 @@ public class App {
       int val = 0;
         double Apris= 249.99;
         double bpris= 149.99;
+        
         while (val != 4) {
             Scanner tangentbord = new Scanner(System.in);
             System.out.println(" 1. lägg till bokning \n 2. Visa innehåll\n 3. Beräkna vinst sålda biljetter \n 4. avsluta \n ");
@@ -21,6 +22,10 @@ public class App {
                 else {
                         
                 }
+             }
+             else if (val == 2) {
+
+                
              }
         }
     }
