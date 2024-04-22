@@ -5,7 +5,7 @@ public class App {
       String[] bokning = new String[20];
       int[] personnmr = new int[20];
       int val = 0;
-        double Apris= 249.99;
+        double Apris= 299.99;
         double bpris= 149.99;
         
         while (val != 4) {
@@ -20,12 +20,21 @@ public class App {
                     System.out.println("Det finns bara 20 platser det är upptaget");
                 }
                 else {
-                        
+                    System.out.println("vilken bussplats vill du boka:");
+                    tangentbord.nextLine(bokning[]);
+                    System.out.println("priser för vuxna 299.99 priser för barn 149.99" );
+                         
                 }
              }
              else if (val == 2) {
 
                 
+             }
+             else if (val==3) {
+                System.out.println("vinsten är");
+                if (plats != 0) {
+                  System.out.println();  
+                }
              }
         }
     }
