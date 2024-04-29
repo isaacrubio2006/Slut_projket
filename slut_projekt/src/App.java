@@ -1,41 +1,56 @@
 import java.util.Scanner;
 public class App {
-    public static void main(String[] args) throws Exception {
-        System.out.println(" gokväll du vill boka buss");
-      String[] bokning = new String[20];
-      int[] personnmr = new int[20];
-      int val = 0;
-        double Apris= 299.99;
-        double bpris= 149.99;
-        
+    public static void main(String[] args) {
+        String[] namn = new String[20];
+        long[] personnummer = new long[20];
+        int val = 0;
+      
+
         while (val != 4) {
-            Scanner tangentbord = new Scanner(System.in);
-            System.out.println(" 1. lägg till bokning \n 2. Visa innehåll\n 3. Beräkna vinst sålda biljetter \n 4. avsluta \n ");
-             val =tangentbord.nextInt();
-
-             if (val==1) {
-                System.out.println("skriv namn och personnummer: ");
-                String boka = tangentbord.nextLine();
-                if (bokning.length == 20) {
-                    System.out.println("Det finns bara 20 platser det är upptaget");
+            Scanner in = new Scanner(System.in);
+            System.out.println("Du kan ange 4 val: ");
+            System.out.println("1. Lägga till en passagerare - boka en obokad plats");
+            System.out.println("2. Skriv ut lediga platser det finns");
+            System.out.println("3. Beräkna vinsten av antalet sålda biljetter (299.90 kr/st).");
+            System.out.println("4. Avsluta programmet");
+            val = in.nextInt();
+            if (val == 1) {
+                int i = 0;
+//                Scanner in = new Scanner(System.in);
+                System.out.println("Ange personnr (10-siffor endast tecken): ");
+                long personnr = in.nextLong();
+                System.out.println("Ange namnet på personen som skall ha bokningen ");
+                String personnamn = in.next();
+                for (i = 0; i < personnummer.length; i++) {
+                    if (personnummer[i] == 0) {
+                        personnummer[i] = personnr;
+                        namn[i] = personnamn;
+                        System.out.println("Booking inlagd");
+                        System.out.println();
+                        break;
+                    }
                 }
-                else {
-                    System.out.println("vilken bussplats vill du boka:");
-                    tangentbord.nextLine(bokning[]);
-                    System.out.println("priser för vuxna 299.99 priser för barn 149.99" );
-                         
+                if (i == personnummer.length) {
+                    System.out.println("Det är fullbokat tyvärr");
                 }
-             }
-             else if (val == 2) {
-
-                
-             }
-             else if (val==3) {
-                System.out.println("vinsten är");
-                if (plats != 0) {
-                  System.out.println();  
+            } else if (val == 2) {
+                int antalled= 0;
+              for(int i = 0; i < personnummer.length; i++){
+                if (personnummer[i] == 0 ) {
+                    antalled++;
                 }
-             }
+              }
+              System.out.println("antal lediga platser är " + antalled);
+            }
+             else if (val == 3) {
+                double vinst = 0;
+                for(int i = 0; i < personnummer.length; i++){
+                    if (personnummer[i] != 0) {
+                      vinst =+ 299.99;  
+                    }
+                }
+              System.out.println("vinst som gjorts är " + vinst);
+            }
         }
     }
 }
