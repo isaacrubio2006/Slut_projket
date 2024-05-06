@@ -51,6 +51,7 @@ public class App {
                 }
               System.out.println("vinst som gjorts är " + vinst);
             }
+           
         }
     }
 }
