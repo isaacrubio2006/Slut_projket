@@ -14,7 +14,8 @@ public class App {
             System.out.println("3. Beräkna vinsten av antalet sålda biljetter (299.90 kr/st).");
             System.out.println("4. Avsluta programmet");
             val = in.nextInt();
-            if (val == 1) {
+
+                if (val == 1) {
                 int i = 0;
 //                Scanner in = new Scanner(System.in);
                 System.out.println("Ange personnr (10-siffor endast tecken): ");
@@ -30,10 +31,12 @@ public class App {
                         break;
                     }
                 }
+
                 if (i == personnummer.length) {
                     System.out.println("Det är fullbokat tyvärr");
                 }
-            } else if (val == 2) {
+            } 
+            else if (val == 2) {
                 int antalled= 0;
               for(int i = 0; i < personnummer.length; i++){
                 if (personnummer[i] == 0 ) {
@@ -42,9 +45,10 @@ public class App {
               }
               System.out.println("antal lediga platser är " + antalled);
             }
+            
              else if (val == 3) {
-                double vinst = 0;
-                for(int i = 0; i < personnummer.length; i++){
+                 double vinst = 0;
+                    for(int i = 0; i < personnummer.length; i++){
                     if (personnummer[i] != 0) {
                       vinst =+ 299.99;  
                     }
